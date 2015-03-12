@@ -1,29 +1,27 @@
 source 'https://rubygems.org'
-
+ruby '2.2.0'
 
 gem 'rails', '4.2.0'
 
 gem 'rails-api'
-
 gem 'spring', :group => :development
-
 gem 'pg'
 gem 'rack-cors'
 gem 'bcrypt'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
 group :development, :test do
-  gem 'capybara'
-  gem 'rubocop'
-  gem 'bullet'
-  gem 'lol_dba'
+#  gem 'capybara'
+ # gem 'rubocop'
+ # gem 'bullet'
+ # gem 'lol_dba'
   gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.1.0'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
-  gem 'codeclimate-test-reporter', require: nil
+ # gem 'codeclimate-test-reporter', require: nil
 end
 group :development do
   gem 'guard'
