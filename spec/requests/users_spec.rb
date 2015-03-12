@@ -9,6 +9,7 @@ describe 'Users API endpoint' do
 
   describe '#index' do
     it 'send back a list of all users' do
+      get '/index'
       expect(response).to be_success
       json = json(response.body)
       expect(json.length).to be @users.length
