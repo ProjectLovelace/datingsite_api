@@ -1,9 +1,10 @@
 *.rbc
 capybara-*.html
-.rspec
 /log
+**.log
 /tmp
 /db/*.sqlite3
+/db/*.sqlite3-journal
 /public/system
 /coverage/
 /spec/tmp
@@ -14,6 +15,8 @@ pickle-email-*.html
 # TODO Comment out these rules if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
 config/secrets.yml
+.env
+.envrc
 
 ## Environment normalisation:
 /.bundle
@@ -29,3 +32,6 @@ config/secrets.yml
 /vendor/assets/bower_components
 *.bowerrc
 bower.json
+
+# Ignore pow environment settings
+.powenv
