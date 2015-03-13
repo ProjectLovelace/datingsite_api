@@ -19,6 +19,7 @@ describe 'Profile API endpoint' do
       json = json(response.body)
       expect(json.length).to be @profiles.length
     end
+  end
 
   describe '#show' do
     it 'gets a single profile and returns json' do
@@ -45,11 +46,10 @@ describe 'Profile API endpoint' do
 
       profile = JSON.parse(response.body)
       expect(profile["seeking"]).to eq "platonic"
-
     end
   end
 
-    describe '#update' do
+  describe '#update' do
     it 'edits an existing profile and returns that profile' do
       @post = @posts.first
       put '/profiles/#{post.id}',
@@ -63,18 +63,14 @@ describe 'Profile API endpoint' do
 
       profile = JSON.parse(response.body)
       expect(profile["bio"]).to eq "My age has changed since I first used this site'"
-
     end
   end
 
-     describe '#destroy' do
-      it 'delete a single post' do
-        post = @posts.first
-        delete "/posts/#{post.id}"
-      expect(response.status).to eq 202
-      end
+  describe '#destroy' do
+    it 'delete a single post' do
+      post = @posts.first
+      delete "/posts/#{post.id}"
+    expect(response.status).to eq 202
     end
-
-
-
+  end
 end
