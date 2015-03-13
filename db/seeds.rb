@@ -6,13 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
+Profile.delete_all
 
-User.create(username: 'Alan', email: 'alan@testing.com', age: 31, location:'02134', seeking:'platonic', gender:'other', languages: ['Ruby', 'PHP', 'Javascript'], bio:'I like pair programming and long walks on the beach')
+user1=User.create!(username: 'Alan', email: 'alan@testing.com')
 
-User.create(username: 'Ada', email: 'ada@lordbyron.com', age: 54, location:'02144', seeking:'platonic', gender:'female', languages: ['Babbage', 'Javascript', 'C++', 'Ada'], bio:'I want to meet nice people for lunch and talk about Project Euler problems!')
+user2=User.create!(username: 'Ada', email: 'ada@lordbyron.com')
 
-User.create(username: 'Grace', email: 'grace@hopper.com', age: 22, location:'02180', seeking:'romantic', gender:'other', languages: ['COBOL', 'PHP', 'Fortran', 'Javascript'], bio:'Looking for a long term and RESTful relationship')
+user3=User.create!(username: 'Grace', email: 'grace@hopper.com')
 
-User.create(username: 'Linus', email: 'linus@linux.com', age: 45, location:'02134', seeking:'both', gender:'male', languages: ['Ruby', 'PHP', 'C#'], bio:'Benevolent dictator seeks romantic partners and open-source collaborators')
+user4=User.create!(username: 'Linus', email: 'linus@linux.com')
 
-User.create(username: 'Rasmus', email: 'toothbrush@php.com', age: 35, location:'10001', seeking:'romantic', gender:'male', languages: ['PHP', 'Ruby', 'Python'], bio:'Stable and employed')
+user5=User.create!(username: 'Rasmus', email: 'toothbrush@php.com')
+
+Profile.create!(user_id: user1.id , age: 31, seeking:'platonic', gender:'other', languages: ['Ruby', 'PHP', 'Javascript'], bio:'I like pair programming and long walks on the beach')
+
+Profile.create!(user_id: user2.id, age: 54, seeking:'platonic', gender:'female', languages: ['Babbage', 'Javascript', 'C++', 'Ada'], bio:'I want to meet nice people for lunch and talk about Project Euler problems!')
+
+Profile.create!(user_id: user3.id, age: 22, seeking:'romantic', gender:'other', languages: ['COBOL', 'PHP', 'Fortran', 'Javascript'], bio:'Looking for a long term and RESTful relationship')
+
+Profile.create!(user_id: user4.id, age: 45, seeking:'both', gender:'male', languages: ['Ruby', 'PHP', 'C#'], bio:'Benevolent dictator seeks romantic partners and open-source collaborators')
+
+Profile.create!(user_id: user5.id, age: 35, seeking:'romantic', gender:'male', languages: ['PHP', 'Ruby', 'Python'], bio:'Stable and employed')
