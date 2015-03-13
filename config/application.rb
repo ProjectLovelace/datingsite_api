@@ -9,10 +9,17 @@ Bundler.require(*Rails.groups)
 module DatingSiteApi
   class Application < Rails::Application
 
-    config.middleware.insert_before 0, "Rack::Cors" do
+    # config.middleware.insert_before 0, "Rack::Cors" do
+    #   allow do
+    #     origins '*'
+    #     resource '*', :headers => :any, :methods => [:get, :post, :options]
+    #   end
+    # end
+
+    config.middleware.use Rack::Cors do
       allow do
         origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        resource '*', headers: :any, methods: [:get, :post, :patch, :put, :delete, :options]
       end
     end
 
