@@ -23,12 +23,14 @@ describe 'Profile API endpoint' do
 
   describe '#show' do
     it 'gets a single profile and returns json' do
-      @profile = FactoryGirl.create(:profile)
-      get "/profiles/#{@profile.id}"
+      @profile.user_id=@user.id
+      get "/profiles/#{@profile.id}",nil,
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}" }
+
       expect(response).to be_success
 
-      post = JSON.parse(response.body)
-      expect(post['age']).to eq @profile.age
+      profile = JSON.parse(response.body)
+      expect(profile['age']).to eq @profile.age
     end
   end
 

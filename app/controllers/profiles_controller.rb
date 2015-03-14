@@ -8,9 +8,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @profile = @user.profile
-
+   # @user = User.find(params[:user_id])
+    @profile = Profile.find(params[:id])
     render json: @profile, status:200
   end
 
@@ -26,6 +25,23 @@ class ProfilesController < ApplicationController
   private
   def profile_params
     params.require(:profile).permit(:age, :bio, :seeking, :gender, :languages, :user_id)
+  end
+
+    def authenticate
+    unless is_user?(get_token)
+      self.headers['WWW-Authenticate'] = 'Token realm="Application"'
+      render json: {
+        error: 'You are not authorized!'
+        }, status: 403
+    end
+  end
+
+  def is_user?(token)
+    @user = User.where(token: token)[0]
+  end
+
+  def get_token
+    request.headers.env['HTTP_AUTHORIZATION'].gsub(/Token token=/, "")
   end
 
 end
