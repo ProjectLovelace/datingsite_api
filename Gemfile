@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.2.0'
 
 gem 'rails', '4.2.0'
-
+gem 'aws-sdk'
 gem 'rails-api'
 gem 'spring', :group => :development
 gem 'pg'
