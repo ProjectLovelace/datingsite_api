@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, defaults: {format: :json}, only: [:create, :edit, :destroy] do
+  resources :users, defaults: {format: :json}, only: [:create, :index, :edit, :destroy] do
     post 'sign_in', on: :collection
   end
 

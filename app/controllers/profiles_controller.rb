@@ -8,7 +8,6 @@ class ProfilesController < ApplicationController
   end
 
   def show
-   # @user = User.find(params[:user_id])
     @profile = Profile.find(params[:id])
     render json: @profile, status:200
   end
