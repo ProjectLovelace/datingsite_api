@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   resources :profiles, only: [:index, :show, :create, :update]
 
+  get 'amazon/sign_key'
+
 
 end
