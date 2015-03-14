@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   has_one :profile
   has_one :survey
-  has_many :images
   has_secure_password
 
   before_create :generate_token

@@ -18,12 +18,12 @@ ActiveRecord::Schema.define(version: 20150313182606) do
 
   create_table "images", force: :cascade do |t|
     t.string   "url"
-    t.integer  "user_id"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "images", ["user_id"], name: "index_images_on_user_id", using: :btree
+  add_index "images", ["profile_id"], name: "index_images_on_profile_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
     t.string "location"
