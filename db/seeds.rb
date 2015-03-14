@@ -8,15 +8,15 @@
 User.delete_all
 Profile.delete_all
 
-user1=User.create!(username: 'Alan', email: 'alan@testing.com')
+user1=User.create!(username: 'Alan', email: 'alan@testing.com', password: "85673026")
 
-user2=User.create!(username: 'Ada', email: 'ada@lordbyron.com')
+user2=User.create!(username: 'Ada', email: 'ada@lordbyron.com', password: "8567302M")
 
-user3=User.create!(username: 'Grace', email: 'grace@hopper.com')
+user3=User.create!(username: 'Grace', email: 'grace@hopper.com', password: "8N673026")
 
-user4=User.create!(username: 'Linus', email: 'linus@linux.com')
+user4=User.create!(username: 'Linus', email: 'linus@linux.com', password: "8567302OL")
 
-user5=User.create!(username: 'Rasmus', email: 'toothbrush@php.com')
+user5=User.create!(username: 'Rasmus', email: 'toothbrush@php.com', password: "856730K6")
 
 Profile.create!(user_id: user1.id , age: 31, seeking:'platonic', gender:'other', languages: ['Ruby', 'PHP', 'Javascript'], bio:'I like pair programming and long walks on the beach')
 
