@@ -23,16 +23,19 @@ describe 'Profile API endpoint' do
 
   describe '#show' do
     it 'gets a single profile and returns json' do
-      profile = FactoryGirl.create(:profile)
-      get '/profiles/#{profile.id}'
+      @profile = FactoryGirl.create(:profile)
+      get "/profiles/#{@profile.id}"
       expect(response).to be_success
+
+      post = JSON.parse(response.body)
+      expect(post['age']).to eq @profile.age
     end
   end
 
   describe '#create' do
     it 'creates a new profile and returns it' do
       post '/profiles',
-      {profile: {
+      { profile: {
         user_id: 11,
         age: 29,
         seeking:'platonic',
