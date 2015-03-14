@@ -38,14 +38,13 @@ describe 'Profile API endpoint' do
     it 'creates a new profile and returns it' do
       post '/profiles',
       { profile: {
-        user_id: 11,
         age: 29,
         seeking:'platonic',
         gender:'other',
         languages: ['Ruby', 'COBOL', 'Javascript'],
         bio:'I want to bring a new friend to the Ruby meetup'
       }}.to_json,
-      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}"}
       expect(response).to be_success
       expect(response.content_type).to be Mime::JSON
 
@@ -56,26 +55,27 @@ describe 'Profile API endpoint' do
 
   describe '#update' do
     it 'edits an existing profile and returns that profile' do
-      @post = @posts.first
-      put '/profiles/#{post.id}',
+      @profile = @profiles.first
+      put "/profiles/#{@profile.id}",
       {profile: {
         age: 50,
         bio:'My age has changed since I first used this site'
       }}.to_json,
-      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s}
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}"}
       expect(response).to be_success
       expect(response.content_type).to be Mime::JSON
 
       profile = JSON.parse(response.body)
-      expect(profile["bio"]).to eq "My age has changed since I first used this site'"
+      expect(profile["bio"]).to eq "My age has changed since I first used this site"
     end
   end
 
-  describe '#destroy' do
-    it 'delete a single post' do
-      post = @posts.first
-      delete "/posts/#{post.id}"
-    expect(response.status).to eq 202
-    end
-  end
+  # describe '#destroy' do
+  #   it 'deletes a single profile' do
+  #     profile = @profiles.first
+  #     delete "/profiles/#{profile.id}"
+  #   expect(response.status).to eq 202
+  #   end
+  # end
+   # not needed at this time, profile destroy is dependant on user -CP
 end
