@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     post 'sign_in', on: :collection
   end
 
-  resources :profiles, only: [:index, :show, :create, :edit]
+  resources :profiles, only: [:index, :show, :create, :update]
 
 
 end
