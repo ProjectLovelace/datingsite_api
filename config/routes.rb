@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     post 'sign_in', on: :collection
   end
 
-  resources :profiles, only: [:index, :show, :create, :update]
+  resources :profiles, only: [:index, :show, :create, :update] do
+    resources :images, only: [:index, :create, :destroy]
+  end
 
   get 'amazon/sign_key'
 
