@@ -44,6 +44,15 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    aws-sdk (2.0.22)
+      aws-sdk-resources (= 2.0.22)
+    aws-sdk-core (2.0.22)
+      builder (~> 3.0)
+      jmespath (~> 1.0)
+      multi_json (~> 1.0)
+      multi_xml (~> 0.5)
+    aws-sdk-resources (2.0.22)
+      aws-sdk-core (= 2.0.22)
     bcrypt (3.1.10)
     builder (3.2.2)
     byebug (3.5.1)
@@ -87,6 +96,8 @@ GEM
     hike (1.2.3)
     hitimes (1.2.2)
     i18n (0.7.0)
+    jmespath (1.0.2)
+      multi_json (~> 1.0)
     json (1.8.2)
     kgio (2.9.3)
     listen (2.9.0)
@@ -103,6 +114,7 @@ GEM
     mini_portile (0.6.2)
     minitest (5.5.1)
     multi_json (1.11.0)
+    multi_xml (0.5.5)
     nenv (0.2.0)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
@@ -205,6 +217,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers!
+  aws-sdk
   bcrypt
   dotenv-rails
   factory_girl_rails (~> 4.0)

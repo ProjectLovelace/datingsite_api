@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
 Profile.delete_all
+Image.delete_all
 
 user1=User.create!(username: 'Alan', email: 'alan@testing.com', password: "85673026")
 
@@ -18,12 +19,25 @@ user4=User.create!(username: 'Linus', email: 'linus@linux.com', password: "85673
 
 user5=User.create!(username: 'Rasmus', email: 'toothbrush@php.com', password: "856730K6")
 
-Profile.create!(user_id: user1.id , age: 31, seeking:'platonic', gender:'other', languages: ['Ruby', 'PHP', 'Javascript'], bio:'I like pair programming and long walks on the beach')
+prof1=Profile.create!(user_id: user1.id , age: 31, seeking:'platonic', gender:'other', languages: ['Ruby', 'PHP', 'Javascript'], bio:'I like pair programming and long walks on the beach')
 
-Profile.create!(user_id: user2.id, age: 54, seeking:'platonic', gender:'female', languages: ['Babbage', 'Javascript', 'C++', 'Ada'], bio:'I want to meet nice people for lunch and talk about Project Euler problems!')
+prof2=Profile.create!(user_id: user2.id, age: 54, seeking:'platonic', gender:'female', languages: ['Babbage', 'Javascript', 'C++', 'Ada'], bio:'I want to meet nice people for lunch and talk about Project Euler problems!')
 
-Profile.create!(user_id: user3.id, age: 22, seeking:'romantic', gender:'other', languages: ['COBOL', 'PHP', 'Fortran', 'Javascript'], bio:'Looking for a long term and RESTful relationship')
+prof3=Profile.create!(user_id: user3.id, age: 22, seeking:'romantic', gender:'other', languages: ['COBOL', 'PHP', 'Fortran', 'Javascript'], bio:'Looking for a long term and RESTful relationship')
 
-Profile.create!(user_id: user4.id, age: 45, seeking:'both', gender:'male', languages: ['Ruby', 'PHP', 'C#'], bio:'Benevolent dictator seeks romantic partners and open-source collaborators')
+prof4=Profile.create!(user_id: user4.id, age: 45, seeking:'both', gender:'male', languages: ['Ruby', 'PHP', 'C#'], bio:'Benevolent dictator seeks romantic partners and open-source collaborators')
 
-Profile.create!(user_id: user5.id, age: 35, seeking:'romantic', gender:'male', languages: ['PHP', 'Ruby', 'Python'], bio:'Stable and employed')
+prof5=Profile.create!(user_id: user5.id, age: 35, seeking:'romantic', gender:'male', languages: ['PHP', 'Ruby', 'Python'], bio:'Stable and employed')
+
+images = Image.create([
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 8ad3269569a7dfccc8091b1b1824d653"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/   e94c765eccf119e8c8f351747788d74b"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 4c1069c253a1ed44449c4de799eb3858"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 7cb0599a922efd2f94d0c076de794e45"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/   0a8ab380ee85c01b334b585a126b30ac"}])
+
+prof1.images << images[0];
+prof2.images << images[1];
+prof3.images << images[2];
+prof4.images << images[3];
+prof5.images << images[4];

@@ -8,6 +8,7 @@ gem 'spring', :group => :development
 gem 'pg'
 gem 'rack-cors', require: 'rack/cors'
 gem 'bcrypt'
+gem 'aws-sdk'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
 group :development, :test do
