@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :images, only: [:index, :create, :destroy]
   end
 
+  resources :locations, only: [:index, :show, :create] do
+    resources :users, only: [:index]
+  end
+
   get 'amazon/sign_key'
 
 

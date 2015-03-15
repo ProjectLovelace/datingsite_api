@@ -5,7 +5,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password_digest
       t.string :token
-      t.belongs_to :location
 
       t.timestamps
     end
