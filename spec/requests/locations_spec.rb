@@ -13,14 +13,15 @@ describe 'Location API endpoint' do
 
     @locations = FactoryGirl.create_list(:location, 5)
     @location = @locations.last
-    # binding.pry
-    @users.map {|user| user.location_id = @location.id }
+    @users.map {|user| @location.users << user }
+
 
   end
 
   describe '#index' do
     it 'send back a list of all locations' do
-      get '/locations'
+      get '/locations',nil,
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}" }
       expect(response).to be_success
       json = json(response.body)
       expect(json.length).to be @locations.length
@@ -29,8 +30,8 @@ describe 'Location API endpoint' do
 
   describe '#show' do
     it 'displays all users at specific location' do
-      get '/locations/"#{@location.id}"/users',nil,
-      { 'Accept' => Mime::JSON.to_s, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => ActionController::HttpAuthentication::Token.encode_credentials(@user.token) }
+      get "/locations/#{@location.id}",nil,
+      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}" }
       binding.pry
       expect(response).to be_success
 
