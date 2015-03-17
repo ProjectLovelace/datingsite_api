@@ -30,7 +30,7 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:zipcode, users: [])
+    params.require(:location).permit(:zipcode, profiles: [])
   end
 
   def authenticate

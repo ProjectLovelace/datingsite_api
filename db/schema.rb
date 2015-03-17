@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(version: 20150315211323) do
     t.string   "languages"
     t.string   "bio"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "location_id"
   end
 
+  add_index "profiles", ["location_id"], name: "index_profiles_on_location_id", using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -51,11 +53,8 @@ ActiveRecord::Schema.define(version: 20150315211323) do
     t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "location_id"
   end
 
-  add_index "users", ["location_id"], name: "index_users_on_location_id", using: :btree
-
+  add_foreign_key "profiles", "locations"
   add_foreign_key "profiles", "users"
-  add_foreign_key "users", "locations"
 end

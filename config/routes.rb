@@ -5,12 +5,14 @@ Rails.application.routes.draw do
   end
 
   resources :profiles, only: [:index, :show, :create, :update] do
-    resources :images, only: [:index, :create, :destroy]
+    resources :images, only: [ :create, :destroy]
   end
 
   resources :locations, only: [:index, :show, :create] do
-    resources :users, only: [:index]
+    resources :profiles, only: [:index]
   end
+  resources :images, only: [:index]
+
 
   get 'amazon/sign_key'
 

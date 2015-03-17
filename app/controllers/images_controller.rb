@@ -1,8 +1,9 @@
 class ImagesController < ApplicationController
 
   def index
-    @profile = Profile.find(params[:profile_id])
-    @images = @profile.images
+   # @profile = Profile.find(params[:profile_id])
+   # @images = @profile.images
+   @images = Image.all
     render json: @images, status: :ok
   end
 
