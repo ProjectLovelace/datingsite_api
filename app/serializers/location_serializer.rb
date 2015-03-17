@@ -1,4 +1,4 @@
 class LocationSerializer < ActiveModel::Serializer
-  has_many :users
-  attributes :zipcode, :users
+  has_many :profiles
+  attributes :zipcode, :profiles
 end

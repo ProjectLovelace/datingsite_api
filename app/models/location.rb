@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-  has_many :users
+  has_many :profiles
   validates :zipcode, presence: true
 
   # def location_exist?()
