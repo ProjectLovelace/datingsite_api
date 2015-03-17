@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_one :profile
-  has_one :survey
+  has_one :profile, dependent: :destroy
+  has_one :survey, dependent: :destroy
   belongs_to :location
 
   has_secure_password

@@ -1,4 +1,4 @@
 class Image < ActiveRecord::Base
-  belongs_to :profile, dependent: :destroy
+  belongs_to :profile
   validates :url, presence: true
 end
