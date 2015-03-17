@@ -16,7 +16,8 @@ class LocationsController < ApplicationController
 
   def show
     @location = Location.find(params[:id])
-    render json: @location, status: 200
+    @profiles = @location.profiles
+    render json: @profiles, status: 200
   end
 
    def update
@@ -30,7 +31,7 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:zipcode, profiles: [])
+    params.require(:location).permit(:zipcode, profilesp: [])
   end
 
   def authenticate
