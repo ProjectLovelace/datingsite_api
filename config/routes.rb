@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :locations, only: [:index, :show, :create] do
-    resources :users, only: [:index]
+    resources :profiles, only: [:index]
   end
   resources :images, only: [:index]
 
