@@ -30,11 +30,17 @@ prof4=Profile.create!(user_id: user4.id, age: 45, seeking:'both', gender:'male',
 prof5=Profile.create!(user_id: user5.id, age: 35, seeking:'romantic', gender:'male', languages: ['PHP', 'Ruby', 'Python'], bio:'Stable and employed')
 
 images = Image.create([
-  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 8ad3269569a7dfccc8091b1b1824d653"},
-  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/   e94c765eccf119e8c8f351747788d74b"},
-  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 4c1069c253a1ed44449c4de799eb3858"},
-  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/ 7cb0599a922efd2f94d0c076de794e45"},
-  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/   0a8ab380ee85c01b334b585a126b30ac"}])
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/download.jpeg"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/e94c765eccf119e8c8f351747788d74b.jpg"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/images+(1).jpeg"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/images+(2).jpeg"},
+  {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/images.jpeg"}])
+
+# {url:"uploads/download.jpeg"},
+#   {url:"uploads/e94c765eccf119e8c8f351747788d74b.jpg"},
+#   {url:"uploads/images+(1).jpeg"},
+#   {url:"uploads/images+(2).jpeg"},
+#   {url:"uploads/images.jpeg"}])
 
 prof1.images << images[0];
 prof2.images << images[1];
