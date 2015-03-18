@@ -36,20 +36,12 @@ images = Image.create([
   {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/images+(2).jpeg"},
   {url:"https://s3.amazonaws.com/datingapp-wdi/uploads/images.jpeg"}])
 
-# {url:"uploads/download.jpeg"},
-#   {url:"uploads/e94c765eccf119e8c8f351747788d74b.jpg"},
-#   {url:"uploads/images+(1).jpeg"},
-#   {url:"uploads/images+(2).jpeg"},
-#   {url:"uploads/images.jpeg"}])
-
 prof1.images << images[0];
 prof2.images << images[1];
 prof3.images << images[2];
 prof4.images << images[3];
 prof5.images << images[4];
 
-locations = Location.create([
-    {zipcode: "0235"}, {zipcode: "0201"}, {zipcode: "0204"}, {zipcode: "0171"}, {zipcode: "0172"}, {zipcode: "0274"}, {zipcode: "0122"}, {zipcode: "0100"}, {zipcode: "0123"}, {zipcode: "0126"}, {zipcode: "0120"}, {zipcode: "0165"}, {zipcode: "0213"}, {zipcode: "0191"}, {zipcode: "0105"}, {zipcode: "0181"}, {zipcode: "0189"}, {zipcode: "0550"}, {zipcode: "0554"}, {zipcode: "0253"}, {zipcode: "0247"}, {zipcode: "0143"}, {zipcode: "0133"}, {zipcode: "0233"}, {zipcode: "0270"}, {zipcode: "0136"}, {zipcode: "0276"}, {zipcode: "0150"}, {zipcode: "0246"}, {zipcode: "0232"}, {zipcode: "0245"}, {zipcode: "0137"}, {zipcode: "0263"}, {zipcode: "0266"}, {zipcode: "0106"}, {zipcode: "0215"}, {zipcode: "0173"}, {zipcode: "0277"}, {zipcode: "0102"}, {zipcode: "0182"}, {zipcode: "0186"}, {zipcode: "0174"}, {zipcode: "0210"}, {zipcode: "0211"}, {zipcode: "0212"}, {zipcode: "0216"}, {zipcode: "0219"}, {zipcode: "0220"}, {zipcode: "0221"}, {zipcode: "0222"}, {zipcode: "0224"}, {zipcode: "0226"}, {zipcode: "0228"}, {zipcode: "0229"}, {zipcode: "0255"}, {zipcode: "0192"}, {zipcode: "0183"}, {zipcode: "0218"}, {zipcode: "0202"}, {zipcode: "0110"}, {zipcode: "0101"}, {zipcode: "0230"}, {zipcode: "0244"}, {zipcode: "0180"}, {zipcode: "0254"}, {zipcode: "0214"}, {zipcode: "0223"}, {zipcode: "0236"}, {zipcode: "0278"}, {zipcode: "0134"}, {zipcode: "0271"}, {zipcode: "0249"}, {zipcode: "0161"}, {zipcode: "0124"}, {zipcode: "0151"}, {zipcode: "0177"}, {zipcode: "0125"}, {zipcode: "0203"}, {zipcode: "0157"}, {zipcode: "0264"}, {zipcode: "0111"}, {zipcode: "0190"}, {zipcode: "0152"}, {zipcode: "0146"}, {zipcode: "0127"}, {zipcode: "0237"}, {zipcode: "0154"}, {zipcode: "0272"}, {zipcode: "0103"}, {zipcode: "0142"}, {zipcode: "0188"}, {zipcode: "0170"}, {zipcode: "0144"}, {zipcode: "0135"}, {zipcode: "0155"}, {zipcode: "0193"}, {zipcode: "0160"}, {zipcode: "0130"}, {zipcode: "0145"}, {zipcode: "0147"}, {zipcode: "0104"}, {zipcode: "0198"}, {zipcode: "0234"}, {zipcode: "0279"}, {zipcode: "0260"}, {zipcode: "0115"}, {zipcode: "0209"}, {zipcode: "0156"}, {zipcode: "0184"}, {zipcode: "0242"}, {zipcode: "0185"}, {zipcode: "0194"}, {zipcode: "0217"}, {zipcode: "0175"}, {zipcode: "0205"}, {zipcode: "0206"}, {zipcode: "0273"}, {zipcode: "0158"}, {zipcode: "0108"}, {zipcode: "0256"}, {zipcode: "0258"}, {zipcode: "0176"}, {zipcode: "0153"}, {zipcode: "0195"}, {zipcode: "0265"}, {zipcode: "0196"}, {zipcode: "0107"}, {zipcode: "0238"}, {zipcode: "0197"}, {zipcode: "0207"}, {zipcode: "0109"}, {zipcode: "0267"}, {zipcode: "0112"}, {zipcode: "0113"}, {zipcode: "0119"}, {zipcode: "0114"}, {zipcode: "0159"}, {zipcode: "0187"}, {zipcode: "0257"}, {zipcode: "0208"}, {zipcode: "0248"}, {zipcode: "0138"}, {zipcode: "0178"}
-  ])
+locations = Location.create([{region: "Metro Boston"}, {region: "North Shore"}, {region: "North West"}, {region: " Metro West"},{region: "South Shore"}, {region: "Central Mass"}, {region: "Cape Cod"} ])
 
 Location.first.profiles << [prof1, prof2, prof3, prof4, prof5];

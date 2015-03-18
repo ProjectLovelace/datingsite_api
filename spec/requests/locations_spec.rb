@@ -44,14 +44,14 @@ describe 'Location API endpoint' do
     it 'creates a new location ' do
       post '/locations',
       { location: {
-        zipcode: "9999"
+        region: "9999"
       }}.to_json,
       { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "#{@user.token}"}
       expect(response).to be_success
       expect(response.content_type).to be Mime::JSON
 
       location = JSON.parse(response.body)
-      expect(location['zipcode']).to eq "9999"
+      expect(location['region']).to eq "9999"
     end
   end
 end

@@ -31,24 +31,24 @@ class LocationsController < ApplicationController
 
   private
   def location_params
-    params.require(:location).permit(:zipcode, profiles: [])
+    params.require(:location).permit(:region, profiles: [])
   end
 
-  def authenticate
-    unless is_user?(get_token)
-      self.headers['WWW-Authenticate'] = 'Token realm="Application"'
-      render json: {
-        error: 'You are not authorized!'
-        }, status: 403
-    end
-  end
+  # def authenticate
+  #   unless is_user?(get_token)
+  #     self.headers['WWW-Authenticate'] = 'Token realm="Application"'
+  #     render json: {
+  #       error: 'You are not authorized!'
+  #       }, status: 403
+  #   end
+  # end
 
-  def is_user?(token)
-    @user = User.where(token: token)[0]
-  end
+  # def is_user?(token)
+  #   @user = User.where(token: token)[0]
+  # end
 
-  def get_token
-    request.headers.env['HTTP_AUTHORIZATION'].gsub(/Token token=/, "")
-  end
+  # def get_token
+  #   request.headers.env['HTTP_AUTHORIZATION'].gsub(/Token token=/, "")
+  # end
 
 end
