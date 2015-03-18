@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :location do
-    zipcode Faker::Address.zip
+    region Faker::Address.zip
   end
 
 end

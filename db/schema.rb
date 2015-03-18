@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150315211323) do
   add_index "images", ["profile_id"], name: "index_images_on_profile_id", using: :btree
 
   create_table "locations", force: :cascade do |t|
-    t.string   "zipcode"
+    t.string   "region"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
